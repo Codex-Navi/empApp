@@ -12,13 +12,13 @@ function CompletScreen(props) {
     const completed = useSelector((state)=>state.complain.completedData)
 
 
-    console.log("This is Cancell Data",completed)
+    console.log("This is Completed Data",completed)
 
 
     return (
        <ScrollView>
       
-              {/* {    data.map((item,index)=>(
+              { completed.compDetails.length > 0 ?   completed.compDetails.map((item,index)=>(
                           <View style={styles.tableCont} key={index}>
                           <View>
                               <TouchableOpacity>
@@ -32,7 +32,7 @@ function CompletScreen(props) {
                               <Text style={styles.listTextDate}>Time & Date : {item.time}</Text>
                           </View>
                       </View>
-                      ))} */}
+                      )):''}
                  
              </ScrollView>
     );

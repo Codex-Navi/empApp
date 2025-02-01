@@ -268,14 +268,14 @@ const userSlice = createSlice({
 
     builder.addCase(fetchCompletedCompalain.pending, (state, action) => {
       state.loading = true
-      state.complaindata = []
+      state.completedData = []
       state.error = ""
     })
 
     builder.addCase(fetchCompletedCompalain.fulfilled, (state, action) => {
 
       state.loading = false
-      state.complaindata = action.payload.data.resp[0]
+      state.completedData = action.payload.data.resp[0]
       state.error = ''
 
 
@@ -283,7 +283,7 @@ const userSlice = createSlice({
 
     builder.addCase(fetchCompletedCompalain.rejected, (state, action) => {
       state.loading = false
-      state.complaindata = []
+      state.completedData = []
       state.error = action.error.message
     })
 
@@ -294,14 +294,14 @@ const userSlice = createSlice({
 
     builder.addCase(fetchCancelCompalain.pending, (state, action) => {
       state.loading = true
-      state.singalComplainData = []
+      state.cancelData = []
       state.error = ""
     })
 
     builder.addCase(fetchCancelCompalain.fulfilled, (state, action) => {
 
       state.loading = false
-      state.singalComplainData = action.payload.data.resp[0]
+      state.cancelData = action.payload.data.resp[0]
       state.error = ''
 
 
@@ -309,7 +309,7 @@ const userSlice = createSlice({
 
     builder.addCase(fetchCancelCompalain.rejected, (state, action) => {
       state.loading = false
-      state.singalComplainData = []
+      state.cancelData = []
       state.error = action.error.message
     })
 

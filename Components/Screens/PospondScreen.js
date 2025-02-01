@@ -18,21 +18,21 @@ function PospondScreen(props) {
     return (
         <ScrollView>
        
-               {/* {    data.map((item,index)=>(
-                           <View style={styles.tableCont} key={index}>
-                           <View>
-                               <TouchableOpacity>
-                                   <Text style={styles.listText}>Ticket Id : {item.TicketId} </Text>
-                                   <Text style={styles.listText}>Machine Id : {item.MachineId} </Text>
-                                   <Text style={styles.listText}>Company Name : {item.Companyname}</Text>
-                               </TouchableOpacity>
-                           </View>
-               
-                           <View>
-                               <Text style={styles.listTextDate}>Time & Date : {item.time}</Text>
-                           </View>
-                       </View>
-                       ))} */}
+                { postpond.compDetails.length > 0 ?   postpond.compDetails.map((item,index)=>(
+                                         <View style={styles.tableCont} key={index}>
+                                         <View>
+                                             <TouchableOpacity>
+                                                 <Text style={styles.listText}>Ticket Id : {item.TicketId} </Text>
+                                                 <Text style={styles.listText}>Machine Id : {item.MachineId} </Text>
+                                                 <Text style={styles.listText}>Company Name : {item.Companyname}</Text>
+                                             </TouchableOpacity>
+                                         </View>
+                             
+                                         <View>
+                                             <Text style={styles.listTextDate}>Time & Date : {item.time}</Text>
+                                         </View>
+                                     </View>
+                                     )):''}
                   
               </ScrollView>
     );

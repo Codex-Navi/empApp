@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSelector } from 'react-redux';
@@ -20,24 +21,24 @@ console.log("This is Cancell Data",cancel)
     return (
         <ScrollView>
           
-{/*        
-               {    data.map((item,index)=>(
+       
+               { cancel.compDetails.length > 0 ?   cancel.compDetails.map((item,index)=>(
                           
                            <View style={styles.tableCont} key={index} >
                            <View>
                                <TouchableOpacity>
-                                   <Text style={styles.listText}>Ticket Id : {item.TicketId} </Text>
-                                   <Text style={styles.listText}>Machine Id : {item.MachineId} </Text>
-                                   <Text style={styles.listText}>Company Name : {item.Companyname}</Text>
+                                   <Text style={styles.listText}>Ticket Id : {item.tcId } </Text>
+                                   <Text style={styles.listText}>Machine Id : {item.machineId} </Text>
+                                   <Text style={styles.listText}>Company Name : {item.companyName}</Text>
                                </TouchableOpacity>
                            </View>
                
                            <View>
-                               <Text style={styles.listTextDate}>Time & Date : {item.time}</Text>
+                               <Text style={styles.listTextDate}>Complain Date : {item.createOnDateTime ? moment(item.createOnDateTime).format('YYYY-MM-DD') :"N/A"}</Text>
                            </View>
                        </View>
                       
-                       ))} */}
+                       )):''}
                  
               </ScrollView>
     );
